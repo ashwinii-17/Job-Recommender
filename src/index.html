@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .job-card {
+            background-color: #f1f1f1;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Job Recommender</h1>
+    
+    <form id="jobForm">
+        <label for="skills">Enter your skills (comma-separated):</label>
+        <input type="text" id="skills" placeholder="e.g., Python, Machine Learning, SQL" required>
+        <button type="submit">Find Jobs</button>
+    </form>
+
+    <div class="results" id="results">
+        <!-- Job results will appear here -->
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('jobForm');
+    const resultsDiv = document.getElementById('results');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent page refresh
+
+        const skills = document.getElementById('skills').value;
+        
+        // For now, just show skills entered (later, connect to backend)
+        resultsDiv.innerHTML = `
+            <div class="job-card">
+                <h3>Skills Entered:</h3>
+                <p>${skills}</p>
+            </div>
+        `;
+
+        // Later: Send skills to backend via fetch() or AJAX and show recommended jobs
+    });
+</script>
+
+</body>
+</html>
