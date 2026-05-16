@@ -1,4 +1,5 @@
-venv/
+.gitignorevenv/
 __pycache__/
 *.pyc
-models/
+models/job_vectors.pkl
+models/tfidf_vectorizer.pkl
